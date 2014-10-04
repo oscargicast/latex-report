@@ -1,0 +1,62 @@
+\documentclass[12pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+\usepackage[
+  bookmarks, 
+  colorlinks=false, 
+  pdfborder={0 0 0}, 
+  pdftitle={report}, 
+  pdfauthor={Oscar Giraldo Castillo}, 
+  pdfsubject={informe de practicas}, 
+  pdfkeywords={uni, report}
+]{hyperref} 
+\usepackage[final]{pdfpages}
+\usepackage{titlesec}
+
+% Chapter title format.
+\titleformat
+{\chapter} % command
+[display] % shape
+{\bfseries\Large\itshape} % format
+{Capítulo. \thechapter} % label
+{0.5ex} % sep
+{    
+  \rule{\textwidth}{1pt}
+  \vspace{1ex}
+  \centering
+} % Before-code.
+[
+  \vspace{-2ex}%
+  \rule{\textwidth}{0.3pt}
+] % After-code.
+
+
+\begin{document}
+\renewcommand\bibname{Referencias} %Renames "Bibliography" to "References" on ref page
+
+%include other pages
+\input{./title.tex}
+\input{./acknow.tex}
+\input{./abstract.tex}
+
+\pagenumbering{roman} %numbering before main content starts
+\renewcommand{\contentsname}{Contenido}
+\tableofcontents
+\renewcommand\listfigurename{Lista de Figuras}
+\listoffigures
+
+\newpage
+\pagenumbering{arabic} %reset numbering to normal for the main content
+
+\input{./introduction.tex} %objective changed to problem definition
+\input{./company.tex} %literature survey included in this
+\input{./activities.tex}
+\input{./results.tex}
+\input{./conclusion.tex}
+
+\input{./ref.tex}
+
+\end{document}
