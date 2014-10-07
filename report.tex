@@ -15,6 +15,7 @@
 ]{hyperref} 
 \usepackage[final]{pdfpages}
 \usepackage{titlesec}
+\usepackage{fancyhdr}
 
 % Chapter title format.
 \titleformat
@@ -32,6 +33,13 @@
   \vspace{-2ex}%
   \rule{\textwidth}{0.3pt}
 ] % After-code.
+
+% Header and Footer.
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Universidad Nacional de Ingeniería}
+\lhead{Informe de Prácticas}
+\rfoot{\thepage}
 
 
 \begin{document}
